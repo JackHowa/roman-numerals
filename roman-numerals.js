@@ -38,7 +38,7 @@ function addNumerals(num) {
 function findRoman(num) {
   var highestMultiple = findHighestMultiple(num);
 
-  return Object.keys(romanConversion).find(key =>     romanConversion[key] === highestMultiple);
+  return Object.keys(romanConversion).find(key => romanConversion[key] === highestMultiple);
 }
 
 function findMultipleOccurence(num) {
