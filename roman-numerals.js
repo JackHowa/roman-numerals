@@ -11,16 +11,20 @@ var traditionRomans = {
 };
 
 function convertToRoman(num) {
- console.log(romanValues());
+  return findHighestMultiple(num);
+}
+
+// find greatest multiple for iterating over 
+function findHighestMultiple(num) {
+  return romanValues().find(arabicNum => arabicNum <= num);
 }
 
 // returns all of the values of tradition romans
 // object.values is not supported by most browsers nor node
-
 function romanValues() {
   return Object.keys(traditionRomans).map(function(key) {
     return traditionRomans[key];
   });
 }
 
-convertToRoman(36);
+console.log(convertToRoman(36));
