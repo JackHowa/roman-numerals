@@ -11,10 +11,28 @@ var traditionRomans = {
 };
 
 function convertToRoman(num) {
-  return findHighestMultiple(num);
+  var multipleTimes = findMultipleOccurence(num);
+  var targetRomanNumeral = findRoman(num);
+  var output = "";
+
+  for (var i = 0; i < multipleTimes; i++) {
+    output += targetRomanNumeral;
+  };
+
+  return output;
 }
 
-// find greatest multiple for iterating over 
+function findRoman(num) {
+  var highestMultiple = findHighestMultiple(num)
+
+  return Object.keys(traditionRomans).find(key =>     traditionRomans[key] === highestMultiple);
+};
+
+function findMultipleOccurence(num) {
+  return Math.floor(num / findHighestMultiple(num));
+}
+
+// find greatest multiple for iterating over
 function findHighestMultiple(num) {
   return romanValues().find(arabicNum => arabicNum <= num);
 }
