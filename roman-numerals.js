@@ -17,16 +17,16 @@ function convertToRoman(num) {
 
   for (var i = 0; i < multipleTimes; i++) {
     output += targetRomanNumeral;
-  };
+  }
 
   return output;
 }
 
 function findRoman(num) {
-  var highestMultiple = findHighestMultiple(num)
+  var highestMultiple = findHighestMultiple(num);
 
   return Object.keys(traditionRomans).find(key =>     traditionRomans[key] === highestMultiple);
-};
+}
 
 function findMultipleOccurence(num) {
   return Math.floor(num / findHighestMultiple(num));
