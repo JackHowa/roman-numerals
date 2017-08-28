@@ -1,12 +1,18 @@
 
 // make a conversion key with arabic to roman
-var traditionRomans = {
+var romanConversion = {
   M: 1000,
+  CM: 900,
   D: 500,
+  CD: 400,
   C: 100,
+  XC: 90,
   L: 50,
+  XL: 40,
   X: 10,
+  IX: 9,
   V: 5,
+  IX: 4
   I: 1
 };
 
@@ -32,7 +38,7 @@ function addNumerals(num) {
 function findRoman(num) {
   var highestMultiple = findHighestMultiple(num);
 
-  return Object.keys(traditionRomans).find(key =>     traditionRomans[key] === highestMultiple);
+  return Object.keys(romanConversion).find(key =>     romanConversion[key] === highestMultiple);
 }
 
 function findMultipleOccurence(num) {
@@ -47,8 +53,8 @@ function findHighestMultiple(num) {
 // returns all of the values of tradition romans
 // object.values is not supported by most browsers nor node
 function romanValues() {
-  return Object.keys(traditionRomans).map(function(key) {
-    return traditionRomans[key];
+  return Object.keys(romanConversion).map(function(key) {
+    return romanConversion[key];
   });
 }
 
