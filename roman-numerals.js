@@ -11,12 +11,13 @@ var traditionRomans = {
 };
 
 function convertToRoman(num) {
- console.log(findClosestNumeral(num));
+ console.log(romanValues());
 }
 
-function findClosestNumeral(arabicNum) {
-  // returns all of the values of tradition romans
-  // object.values is not supported by most browsers nor node 
+// returns all of the values of tradition romans
+// object.values is not supported by most browsers nor node
+
+function romanValues() {
   return Object.keys(traditionRomans).map(function(key) {
     return traditionRomans[key];
   });
