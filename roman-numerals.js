@@ -12,7 +12,7 @@ var romanConversion = {
   X: 10,
   IX: 9,
   V: 5,
-  IX: 4
+  IV: 4,
   I: 1
 };
 
@@ -20,7 +20,7 @@ function convertToRoman(num) {
   var totalOutput = "";
 
   while (num > 0) {
-    totalOutput += addNumerals(num)
+    totalOutput += addNumerals(num);
     num %= findHighestMultiple(num);
   }
 
