@@ -11,15 +11,22 @@ var traditionRomans = {
 };
 
 function convertToRoman(num) {
-  var multipleTimes = findMultipleOccurence(num);
-  var targetRomanNumeral = findRoman(num);
   var output = "";
 
-  for (var i = 0; i < multipleTimes; i++) {
-    output += targetRomanNumeral;
-  }
 
+
+  num %= findHighestMultiple(num);
+
+  if ()
   return output;
+}
+
+function addNumerals(num) {
+  var letterOutput = '';
+  for (var i = 0; i < findMultipleOccurence(num); i++) {
+    letterOutput += findRoman(num);
+  }
+  return letterOutput;
 }
 
 function findRoman(num) {
