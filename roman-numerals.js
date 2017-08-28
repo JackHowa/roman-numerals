@@ -11,14 +11,14 @@ var traditionRomans = {
 };
 
 function convertToRoman(num) {
-  var output = "";
+  var totalOutput = "";
 
+  while (num > 0) {
+    totalOutput += addNumerals(num)
+    num %= findHighestMultiple(num);
+  }
 
-
-  num %= findHighestMultiple(num);
-
-  if ()
-  return output;
+  return totalOutput;
 }
 
 function addNumerals(num) {
